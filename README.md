@@ -42,6 +42,8 @@ Finally, run:
 
 to see your new message of the day.
 
-Tested in Gnome and Tilix terminals.
+Tested in Gnome and Tilix terminals (loads upon each new launch, without having to log out of your active desktop session).
 
 PSA: To make your terminal even more customized, use [tilix from Debian backports](https://packages.debian.org/sid/tilix) for terminal backgrounds, tiling etc.
+
+Base code from [Ubuntu's](https://ubuntu.com) server motd
