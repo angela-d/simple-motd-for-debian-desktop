@@ -21,7 +21,11 @@ Ubuntu-like "message of the day" screen for Debian desktop terminals, without th
 Dependencies:
 > $ apt update && apt install figlet lolcat
 
-As the user you want to see the motd upon each terminal launch, run:
+Figlet: Displays the ascii art for what your hostname / custom banner reads
+
+Lolcat: Colors the ascii art in randomly generated colored gradients
+
+As the user you want to see the motd upon each terminal launch, run [ie. run command separately for root, user, user1 etc; if you want all accounts to have a motd]:
 > nano ~/motd.sh
 
 and paste the contents of "motd.sh"
@@ -39,3 +43,5 @@ Finally, run:
 to see your new message of the day.
 
 Tested in Gnome and Tilix terminals.
+
+PSA: To make your terminal even more customized, use [tilix from Debian backports](https://packages.debian.org/sid/tilix) for terminal backgrounds, tiling etc.
