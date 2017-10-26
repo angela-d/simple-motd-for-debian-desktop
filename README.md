@@ -8,16 +8,19 @@ Dependencies:
 
 As the user you want to see the motd upon each terminal launch, run:
 > nano ~/motd.sh
+
 and paste the contents of "motd.sh"
 
 Save & exit.
 
 Run:
 > $ chmod +x ~/motd.sh
+
 to make the shell script executable.
 
 Finally, run:
 > . ~/.bashrc
+
 to see your new message of the day.
 
 Tested in Gnome and Tilix terminals.
