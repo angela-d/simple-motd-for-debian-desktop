@@ -14,11 +14,13 @@ Ubuntu-like "message of the day" screen for Debian desktop terminals, without th
 
 ## Install
 
+### Get dependencies
 ```bash
 apt update && apt install figlet lolcat
 ```
 
-As the user you want to see the motd upon each terminal launch, run [ie. run command separately for root, user, user1 etc; if you want all accounts to have a motd]:
+### Create the message of the day script
+As the user you want to see the motd upon each terminal launch, run [ie. run the following command separately for root, user, user1 etc; if you want all accounts to have a motd]:
 ```bash
 nano ~/motd.sh
 ```
@@ -27,12 +29,12 @@ and paste the contents of [motd.sh](https://github.com/z0m8i3/simple-motd-for-de
 
 Save & exit.
 
-Make the shell script executable:
+### Make the shell script executable:
 ```bash
 chmod +x ~/motd.sh
 ```
 
-Finally, refresh your bashrc file without logging out:
+### Finally, refresh your bashrc file without logging out:
 ```bash
 . ~/.bashrc
 ```
