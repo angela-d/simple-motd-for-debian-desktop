@@ -3,46 +3,43 @@ Ubuntu-like "message of the day" screen for Debian desktop terminals, without th
 
 (Can be used in any Linux distro, but only tested in Debian)
 
-                          __| | ___| |__ (_) __ _ _ __  
-                         / _` |/ _ \ '_ \| |/ _` | '_ \ 
-                        | (_| |  __/ |_) | | (_| | | | |
-                         \__,_|\___|_.__/|_|\__,_|_| |_|
-                                                        
+![debian motd screenshot](https://raw.githubusercontent.com/z0m8i3/simple-motd-for-debian-desktop/master/img/debian-motd-screenshot.png)
 
-	Debian GNU/Linux 9.2 (stretch) 		Kernel: 4.9.0-4-amd64
+(terminal background not included)
 
-		As of: Wed Oct 25 21:44:56 CDT 2017
+## Dependencies:
+* Figlet: Displays the ascii art for what your hostname / custom banner reads
 
-	System load:	0.51		Processes:	179
-	Memory usage:	0.0%		Uptime:		4:00 hours
-	Disk usage:	20%		Swap:		0.0%
+* Lolcat: Colors the ascii art in randomly generated colored gradients
 
+## Install
 
-Dependencies:
-> $ apt update && apt install figlet lolcat
-
-Figlet: Displays the ascii art for what your hostname / custom banner reads
-
-Lolcat: Colors the ascii art in randomly generated colored gradients
+```bash
+apt update && apt install figlet lolcat
+```
 
 As the user you want to see the motd upon each terminal launch, run [ie. run command separately for root, user, user1 etc; if you want all accounts to have a motd]:
-> nano ~/motd.sh
+```bash
+nano ~/motd.sh
+```
 
-and paste the contents of "motd.sh"
+and paste the contents of [motd.sh](https://github.com/z0m8i3/simple-motd-for-debian-desktop/blob/master/motd.sh)
 
 Save & exit.
 
-Run:
-> $ chmod +x ~/motd.sh
+Make the shell script executable:
+```bash
+chmod +x ~/motd.sh
+```
 
-to make the shell script executable.
-
-Finally, run:
-> . ~/.bashrc
+Finally, refresh your bashrc file without logging out:
+```bash
+. ~/.bashrc
+```
 
 to see your new message of the day.
 
-Tested in Gnome and Tilix terminals (loads upon each new launch, without having to log out of your active desktop session).
+Tested in Gnome and Tilix terminals (the motd loads upon each new launch, without having to log out of your active desktop session).
 
 PSA: To make your terminal even more customized, use [tilix from Debian backports](https://packages.debian.org/sid/tilix) for terminal backgrounds, tiling etc.
 
