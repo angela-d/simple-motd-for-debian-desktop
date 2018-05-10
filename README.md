@@ -14,9 +14,15 @@ Ubuntu-like "message of the day" screen for Debian desktop terminals, without th
 
 ## Install
 
-### Get dependencies
+### Vanilla Debian or Ubuntu
 ```bash
 apt update && apt install figlet lolcat
+```
+
+### (optional) If using RVM:
+```bash
+apt update && apt install figlet
+gem install lolcat
 ```
 
 ### Create the message of the day script
@@ -25,7 +31,7 @@ As the user you want to see the motd upon each terminal launch, run [ie. run the
 nano ~/motd.sh
 ```
 
-and paste the contents of [motd.sh](https://github.com/z0m8i3/simple-motd-for-debian-desktop/blob/master/motd.sh)
+and paste the contents of [motd.sh](simple-motd-for-debian-desktop/blob/master/motd.sh)
 
 Save & exit.
 
@@ -40,9 +46,17 @@ chmod +x ~/motd.sh
 ```
 
 to see your new message of the day.
+***
+### (optional) If you are using RVM, run `whereis lolcat` and replace the existing path, from:
+```bash
+LOLCAT=/usr/games/lolcat #whereis lolcat
+```
+to the location in your terminal:
+```bash
+LOLCAT=~/.rvm/gems/ruby-2.4.1/bin/lolcat
+```
 
-Tested in Gnome and Tilix terminals (the motd loads upon each new launch, without having to log out of your active desktop session).
-
-PSA: To make your terminal even more customized, use [tilix from Debian backports](https://packages.debian.org/sid/tilix) for terminal backgrounds, tiling etc.
+***
+Tested in Gnome and [Tilix](https://packages.debian.org/sid/tilix) terminals (the motd loads upon each new launch, without having to log out of your active desktop session).
 
 Base code from [Ubuntu's](https://ubuntu.com) server motd
