@@ -3,7 +3,7 @@ Ubuntu-like "message of the day" screen for Debian desktop terminals, without th
 
 (Can be used in any Linux distro, but only tested in Debian)
 
-![debian motd screenshot](https://raw.githubusercontent.com/z0m8i3/simple-motd-for-debian-desktop/master/img/debian-motd-screenshot.png)
+![debian motd screenshot](img/debian-motd-screenshot.png)
 
 (terminal background not included)
 
