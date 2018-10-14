@@ -28,10 +28,13 @@ gem install lolcat
 ### Create the message of the day script
 As the user you want to see the motd upon each terminal launch, run [ie. run the following command separately for root, user, user1 etc; if you want all accounts to have a motd]:
 ```bash
-nano ~/motd.sh
+nano ~/.bashrc
 ```
 
-and paste the contents of [motd.sh](simple-motd-for-debian-desktop/blob/master/motd.sh)
+and "link" to your MOTD script (replace /path/to/ with your location):
+```bash
+sh /path/to/motd.sh
+```
 
 Save & exit.
 
