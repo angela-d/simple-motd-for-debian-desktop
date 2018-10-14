@@ -40,7 +40,7 @@ Save & exit.
 
 ### Make the shell script executable:
 ```bash
-chmod +x ~/motd.sh
+chmod +x /path/to/motd.sh
 ```
 
 ### Finally, refresh your bashrc file without logging out:
