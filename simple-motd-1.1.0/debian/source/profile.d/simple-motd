@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# obtain the config file
+source /etc/simple-motd.conf
+
+# if the config is not all, check the username
+if [ "$DISPLAY_TO" != "ALL" ] && [ "$DISPLAY_TO" == "$USER" ];
+then
+
+  simple-motd
+
+elif [ "$DISPLAY_TO" == "ALL" ];
+then
+
+  simple-motd
+
+fi

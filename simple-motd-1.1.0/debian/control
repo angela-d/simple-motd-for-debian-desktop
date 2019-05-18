@@ -1,0 +1,17 @@
+Source: simple-motd
+Section: misc
+Priority: optional
+Maintainer: Angela <angelad@disroot.org>
+Build-Depends: debhelper
+Standards-Version: 3.9.8
+Vcs-Git: https://github.com/angela-d/simple-motd-for-debian-desktop.git
+Vcs-browser: https://github.com/angela-d/simple-motd-for-debian-desktop.git
+
+Package: simple-motd
+Architecture: all
+Pre-Depends: debconf, figlet(>=2.2.5), lolcat (>=42.0.99)
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends:
+Homepage: https://github.com/angela-d/simple-motd-for-debian-desktop
+Description: Simple MOTD for Debian-based desktops and terminals
+ Pretty up your terminal window with ascii & informational snippets.

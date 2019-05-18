@@ -1,0 +1,3 @@
+debian/source/simple-motd	/usr/bin
+debian/source/simple-motd.conf	/etc
+debian/source/profile.d	/etc

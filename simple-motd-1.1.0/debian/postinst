@@ -1,0 +1,37 @@
+#!/bin/bash
+set -e
+
+function green() {
+  echo -e "\e[32m$1\e[0m"
+}
+
+# obtain the last non-root user; assuming that may be the sole user of the motd
+USER=$(last | grep "logged in" | grep -o '^\S*')
+
+# prompt the user for preferences
+figlet simple-motd | /usr/games/lolcat
+green "Do you want the MOTD to display for all users, or just $USER?\nEnter your choice by supplying the number only:\n\t1 = $USER only\n\t2 = All users"
+read -r CHOICE
+
+# make sure the config isn't already set
+if [ "$(grep "simple-motd" /etc/bash.bashrc | wc -l)" == '0' ];
+then
+  echo -e "\n# displays motd from https://github.com/angela-d/simple-motd-for-debian-desktop" >> /etc/bash.bashrc
+  echo "source /etc/profile.d/simple-motd" >> /etc/bash.bashrc
+fi
+
+if [ "$CHOICE" == '1' ];
+then
+
+  echo "Setting config for $USER..."
+
+  # write the config
+  echo "DISPLAY_TO=$USER" > /etc/simple-motd.conf
+  green "Setup complete for Simple MOTD."
+
+else
+
+  echo "DISPLAY_TO=ALL" > /etc/simple-motd.conf
+  green "MOTD has been set up globally.\n To take effect, open a new terminal, or run:\n\t. ~/.bashrc"
+
+fi
