@@ -1,5 +1,0 @@
-#!/bin/bash
-set -e
-
-# cleanup bashrc references to simple-motd, so errors aren't triggered after simple-motd is uninstalled
-sed -i '/# displays motd/,/simple-motd>/d' /home/*/.bashrc
