@@ -9,7 +9,7 @@ then
 
   simple-motd
 
-elif [ "$DISPLAY_TO" == "ALL" ];
+elif [ "$DISPLAY_TO" == "ALL" ] && [[ $EUID -ne 0 ]];
 then
 
   simple-motd

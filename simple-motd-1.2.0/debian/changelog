@@ -1,0 +1,13 @@
+simple-motd (1.2.0) stable; urgency=low
+
+  * Added some vibrancy to the terminal output
+  * Added top memory hogs and IP to output
+  * Rounded up total memory display
+
+ -- Angela <angelad@disroot.org>  Mon, 30 Sep 2019 21:36:54 -0500
+
+simple-motd (1.1.0) stable; urgency=low
+
+  * Bugfixes and logic improvements
+
+ -- Angela <angelad@disroot.org>  Fri, 17 May 2019 23:06:05 -0500

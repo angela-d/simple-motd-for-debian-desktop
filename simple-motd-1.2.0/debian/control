@@ -9,7 +9,7 @@ Vcs-browser: https://github.com/angela-d/simple-motd-for-debian-desktop.git
 
 Package: simple-motd
 Architecture: all
-Pre-Depends: debconf, figlet(>=2.2.5), lolcat (>=42.0.99)
+Pre-Depends: debconf, figlet(>=2.2.5), lolcat (>=42.0.99), net-tools (>=1.60)
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Recommends:
 Homepage: https://github.com/angela-d/simple-motd-for-debian-desktop

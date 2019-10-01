@@ -1,0 +1,36 @@
+#!/bin/sh
+
+BANNER=$(hostname)
+
+[ -r /etc/lsb-release ] && . /etc/lsb-release
+
+if [ -z "$DISTRIB_DESCRIPTION" ] && [ -x /usr/bin/lsb_release ];
+then
+  # Fall back to using the very slow lsb_release utility
+  DISTRIB_DESCRIPTION=$(lsb_release -s -d)
+fi
+
+
+figlet "$BANNER" -c | lolcat -f
+printf "\n"
+
+printf "\t%s \t\t\e[1mKernel\e[0m %s\n" "$DISTRIB_DESCRIPTION" "$(uname -r)"
+printf "\n"
+
+DATE=$(date)
+LOAD=$(cat < /proc/loadavg | awk '{print $1}')
+ROOT_USAGE=$(df -h / | awk '/\// {print $(NF-1)}')
+MEMORY_USAGE=$(free -t -g | grep "Total" | awk '{print $3;}')
+TOTAL_MEMORY=$(free -h -g | grep "Mem" | awk '{print int($2+0.5)" GB";}')
+SWAP=$(free -m | awk '/Swap/ { printf("%3.1f%%", "exit !$2;$3/$2*100") }')
+TIME=$(uptime | grep -ohe 'up .*' | sed 's/,/\ hours/g' | awk '{ printf $2" "$3 }')
+PROCESSES=$(ps aux | wc -l)
+IP=$(hostname -I)
+HEAVY_MEM=$(ps -eo cmd,%mem,%cpu --sort=-%mem | head -n 4 | lolcat -f --spread=2)
+
+printf "\t\t\e[1mAs of:\e[0m %s\n\n" "$DATE"
+printf "\t\e[1mSystem Load:\e[0m\t%s\t\t\e[1mProcesses:\e[0m\t%s\n" "$LOAD" "$PROCESSES"
+printf "\t\e[1mMemory Usage:\e[0m\t%s/%s\t\t\e[1mUptime:\e[0m\t\t%s\n" "$MEMORY_USAGE" "$TOTAL_MEMORY" "$TIME"
+printf "\t\e[1mDisk Usage:\e[0m\t%s\t\t\e[1mSwap:\e[0m\t\t%s\n\n" "$ROOT_USAGE" "$SWAP"
+printf "\t\t\t\e[1mIP:\e[0m %s\n\n" "$IP"
+printf "\e[1mHeaviest Memory Usage:\e[0m\n%s\n\n" "$HEAVY_MEM"
