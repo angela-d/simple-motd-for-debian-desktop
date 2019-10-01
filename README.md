@@ -15,7 +15,7 @@ Ubuntu-like "message of the day" screen for Debian desktop terminals, without th
 ![Install](img/install-progress.png)
 
 ## Install
-Download the latest .deb installer from the [releases](https://github.com/angela-d/simple-motd-for-debian-desktop/releases) page and run:
+Clone the repo or download the latest .deb installer from the [releases](https://github.com/angela-d/simple-motd-for-debian-desktop/releases) page and run:
 ```bash
 sudo apt install ./simple-motd.deb
 ```
@@ -23,6 +23,8 @@ in the directory you downloaded the .deb to.  (ie. `cd /tmp && sudo apt install 
 
 ## Additional Users
 Users that are added after installation will also be granted view of the MOTD (if you have 'All' configured)
+
+**`su - root` being the exception. (User ID 0 is not issued a MOTD.)**
 
 To change your configuration of who sees the MOTD:
 ```bash
